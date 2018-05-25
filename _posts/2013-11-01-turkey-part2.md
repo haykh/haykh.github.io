@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Hitchhiking trip from Armenia to Turkey and Georgia [part 2]"
-date:   2013-11-01 12:00:00 -0400
+date:   2013-11-15 03:00:00 -0400
 categories: Travel
 tags:
   - travel

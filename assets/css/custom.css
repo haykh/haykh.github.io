@@ -3,3 +3,24 @@
   margin-left: auto;
   margin-right: auto
 }
+
+body {
+  align-items: stretch;
+}
+
+.site-title {
+  font-family: 'Raleway', sans-serif !important;
+  font-weight: 800 !important;
+}
+
+#sidebar {
+  background-image: url('../images/dark.png');
+  background-size: cover;
+}
+
+@media (max-width: 785px) {
+  body:not(home) {
+    background-image: url('../images/dark.png');
+    background-size: 100%;
+  }
+}
