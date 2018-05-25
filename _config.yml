@@ -32,7 +32,7 @@ plugins:
   - jekyll-feed
 
 disqus:
-  shortname: haykh
+  shortname: fongandrew/hydeout
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
