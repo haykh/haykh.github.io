@@ -1,0 +1,150 @@
+- selector: slider20131101
+  bullets: true
+  # captions: true
+  images:
+    - src: /assets/images/2014-turkey-travel/pic1.jpg
+      alt: pic1
+    - src: /assets/images/2014-turkey-travel/pic2.jpg
+      alt: pic2
+  settings:
+    height: 400
+    effect: "'fade'"
+    transitionDuration: 10
+
+- selector: slider20131102
+  bullets: true
+  # captions: true
+  images:
+    - src: /assets/images/2014-turkey-travel/pic5.jpg
+      alt: pic1
+    - src: /assets/images/2014-turkey-travel/pic6.jpg
+      alt: pic2
+    - src: /assets/images/2014-turkey-travel/pic7.jpg
+      alt: pic2
+    - src: /assets/images/2014-turkey-travel/pic8.jpg
+      alt: pic2
+  settings:
+    height: 500
+    effect: "'fade'"
+    transitionDuration: 10
+
+- selector: slider20131103
+  bullets: true
+  # captions: true
+  images:
+    - src: /assets/images/2014-turkey-travel/pic10.jpg
+      alt: pic1
+    - src: /assets/images/2014-turkey-travel/pic11.jpg
+      alt: pic2
+    - src: /assets/images/2014-turkey-travel/pic12.jpg
+      alt: pic2
+  settings:
+    height: 400
+    effect: "'fade'"
+    transitionDuration: 10
+
+- selector: slider20131104
+  bullets: true
+  # captions: true
+  images:
+    - src: /assets/images/2014-turkey-travel/pic17.jpg
+      alt: pic1
+    - src: /assets/images/2014-turkey-travel/pic18.jpg
+      alt: pic2
+  settings:
+    height: 500
+    effect: "'fade'"
+    transitionDuration: 10
+
+- selector: slider20131105
+  bullets: true
+  # captions: true
+  images:
+    - src: /assets/images/2014-turkey-travel/pic20.jpg
+      alt: pic1
+    - src: /assets/images/2014-turkey-travel/pic21.jpg
+      alt: pic2
+  settings:
+    height: 500
+    effect: "'fade'"
+    transitionDuration: 10
+
+- selector: slider20131106
+  bullets: true
+  # captions: true
+  images:
+    - src: /assets/images/2014-turkey-travel/pic22.jpg
+      alt: pic1
+    - src: /assets/images/2014-turkey-travel/pic23.jpg
+      alt: pic2
+  settings:
+    height: 500
+    effect: "'fade'"
+    transitionDuration: 10
+
+- selector: slider20131107
+  bullets: true
+  # captions: true
+  images:
+    - src: /assets/images/2014-turkey-travel/pic25.jpg
+      alt: pic1
+    - src: /assets/images/2014-turkey-travel/pic26.jpg
+      alt: pic2
+    - src: /assets/images/2014-turkey-travel/pic27.jpg
+      alt: pic2
+  settings:
+    height: 500
+    effect: "'fade'"
+    transitionDuration: 10
+
+- selector: slider20131108
+  bullets: true
+  # captions: true
+  images:
+    - src: /assets/images/2014-turkey-travel/pic31.jpg
+      alt: pic1
+    - src: /assets/images/2014-turkey-travel/pic32.jpg
+      alt: pic2
+  settings:
+    height: 500
+    effect: "'fade'"
+    transitionDuration: 10
+
+- selector: slider20131109
+  bullets: true
+  # captions: true
+  images:
+    - src: /assets/images/2014-turkey-travel/pic34.jpg
+      alt: pic1
+    - src: /assets/images/2014-turkey-travel/pic35.jpg
+      alt: pic2
+  settings:
+    height: 500
+    effect: "'fade'"
+    transitionDuration: 10
+
+- selector: slider20131110
+  bullets: true
+  # captions: true
+  images:
+    - src: /assets/images/2014-turkey-travel/pic38.jpg
+      alt: pic1
+    - src: /assets/images/2014-turkey-travel/pic39.jpg
+      alt: pic2
+  settings:
+    height: 400
+    effect: "'fade'"
+    transitionDuration: 10
+
+- selector: slider20131111
+  bullets: true
+  # captions: true
+  images:
+    - src: /assets/images/2014-turkey-travel/pic40.jpg
+      alt: pic1
+    - src: /assets/images/2014-turkey-travel/pic41.jpg
+      alt: pic2
+  settings:
+    height: 500
+    effect: "'fade'"
+    transitionDuration: 10
