@@ -36,9 +36,8 @@ plugins:
   - jekyll-gist
   - jekyll-paginate
 
-
-# disqus:
-#   shortname: haykh-github-io
+disqus:
+  shortname: haykh-github-io
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
