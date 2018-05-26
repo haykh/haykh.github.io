@@ -2,12 +2,12 @@
   bullets: true
   # captions: true
   images:
-    - src: /assets/images/2014-turkey-travel/pic1.jpg
+    - src: ../assets/images/2014-turkey-travel/pic1.jpg
       alt: pic1
-    - src: /assets/images/2014-turkey-travel/pic2.jpg
+    - src: ../assets/images/2014-turkey-travel/pic2.jpg
       alt: pic2
   settings:
-    height: 400
+    height: 500
     effect: "'fade'"
     transitionDuration: 10
 
