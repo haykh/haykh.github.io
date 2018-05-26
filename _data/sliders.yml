@@ -148,3 +148,16 @@
     height: 500
     effect: "'fade'"
     transitionDuration: 10
+
+- selector: slider20131112
+  bullets: true
+  captions: true
+  images:
+    - src: /assets/images/2013-dissipative-mech/pic4.png
+      alt: position vs time of 1st bob
+    - src: /assets/images/2013-dissipative-mech/pic5.png
+      alt: position vs time of 2nd bob
+  settings:
+    height: 300
+    effect: "'fade'"
+    transitionDuration: 10

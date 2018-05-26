@@ -13,11 +13,6 @@
   font-weight: 800 !important;
 }
 
-/* #sidebar {
-  background-image: url('../images/dark.png');
-  background-size: cover;
-} */
-
 @media (min-width: 785px) {
   body {
     background-image: url('../images/dark.png');
