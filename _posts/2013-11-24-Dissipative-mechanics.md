@@ -3,6 +3,7 @@ layout: post
 title:  Paradox of dissipative statistical mechanics [or] Where the hell is the second bob
 date:   2013-11-20 11:10:00 -0400
 categories: Science Thoughts
+excerpt_separator: "<!--more-->"
 tags:
   - science
   - physics
@@ -14,6 +15,8 @@ image_sliders:
 In this post I would like to introduce a rather interesting topic especially for those who’re concerned about how nature works but are not majoring in theoretical physics. I do not hold any degree in physics yet, so this post is going to be just a glance of a pretty much amateur, fresh undergrad, who is currently working on several very narrow theoretical physics problems. Hence, of course, I want to obtain an adequate feedback and harsh criticism, as I believe there are many people who know these topics better than I do. The main purpose of this outline is to provoke a discussion between those who care.
 
 ![pic1](/assets/images/2013-dissipative-mech/pic1.gif)
+
+<!--more-->
 
 For those not majoring in physics, there may appear several unknown words in the title, so let’s first review all of them before moving forward to the problem itself.
 

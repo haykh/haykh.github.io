@@ -3,6 +3,7 @@ layout: post
 title:  "Hitchhiking trip from Armenia to Turkey and Georgia [part 1]"
 date:   2013-11-15 02:29:00 -0400
 categories: Travel
+excerpt_separator: "<!--more-->"
 tags:
   - travel
 image_sliders:
@@ -17,6 +18,8 @@ quite useful for those who're up to make such a low cost hitchhiking trip in thi
 Important data about the trip itself will be highlighted.
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m76!1m12!1m3!1d1150437.3802215755!2d42.40887841117605!3d41.107166553127854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m61!3e0!4m5!1s0x406aa2dab8fc8b5b%3A0x3d1479ae87da526a!2sYerevan%2C+Armenia!3m2!1d40.1791857!2d44.4991029!4m5!1s0x40440cd7e64f626b%3A0x61d084ede2576ea3!2sTbilisi%2C+Georgia!3m2!1d41.7151377!2d44.827096!4m5!1s0x406786304ea2d221%3A0x7a3053a9e12ea967!2sBatumi%2C+Georgia!3m2!1d41.6167547!2d41.636745499999996!4m5!1s0x40643c066bf2ec89%3A0xc4390aca748c2b71!2sTrabzon%2C+Ortahisar%2FTrabzon%2C+Turkey!3m2!1d41.0026969!2d39.7167633!4m5!1s0x40667ac3f7b24237%3A0x15900b899fb9b54!2sRize%2C+Rize+Merkez%2FRize%2C+Turkey!3m2!1d41.025511!2d40.517666!4m5!1s0x406e5f28a5eb94f1%3A0x10e3fd56abbfb86!2sErzurum%2C+Turkey!3m2!1d39.905499299999995!2d41.2658236!4m5!1s0x406967304b851627%3A0x6e2460b2c28c567d!2zU2FyxLFrYW3EscWfLCAzNjUwMCBTYXLEsWthbcSxxZ8vS2FycywgVHVya2V5!3m2!1d40.333400999999995!2d42.5904789!4m5!1s0x40698ed9cd732267%3A0x46d5117e984d216!2sKars%2C+36000+Kars+Merkez%2FKars%2C+Turkey!3m2!1d40.601337799999996!2d43.097452499999996!4m5!1s0x4042da8d2d3dd9a1%3A0x177cd54d58eb951b!2sAkhaltsikhe%2C+Georgia!3m2!1d41.6434293!2d42.9934449!4m5!1s0x406aa2dab8fc8b5b%3A0x3d1479ae87da526a!2sYerevan%2C+Armenia!3m2!1d40.1791857!2d44.4991029!5e0!3m2!1sen!2sus!4v1527213906489" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+<!--more-->
 
 > Just in case: primarily, I was planning to visit Tbilisi, stay there for 3-4 days and get back to Yerevan. But things went more complicated and amazing when I suddenly decided to hit the road to the west.
 

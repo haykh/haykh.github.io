@@ -3,6 +3,7 @@ layout: post
 title:  Penrose diagrams - quick review [part 1]
 date:   2013-11-27 22:26:00 -0400
 categories: Science
+excerpt_separator: "<!--more-->"
 tags:
   - science
   - physics
@@ -11,6 +12,8 @@ tags:
 This post is aimed for a little bit advanced reader, though those who have at least any interest towards theoretical physics will find it interesting and rather useful. Here I’m going to introduce an interesting physics apparatus called Penrose diagrams, which is intensively used in general theory of relativity and especially in black hole thermodynamics. As I didn’t find any quick and detailed explanation, once I really required it, I now decided to write a brief review on how to derive and use right this pretty necessary stuff.
 
 ![pic1](/assets/images/2013-penrose/pic1.gif)
+
+<!--more-->
 
 ## Schwarzschild Black Hole & Kruskal-Szekeres Coordinates
 

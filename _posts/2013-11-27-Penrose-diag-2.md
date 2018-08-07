@@ -3,12 +3,15 @@ layout: post
 title:  Penrose diagrams - quick review [part 2]
 date:   2013-11-27 22:26:00 -0400
 categories: Science
+excerpt_separator: "<!--more-->"
 tags:
   - science
   - physics
 ---
 
 In this post I’ll finish my brief introduction to Penrose diagrams and the process of compactification. [Last time]({{ site.baseurl }}{% link _posts/2013-11-27-Penrose-diag-1.md %}) we found out how to compactify the free space, and this simple trick helped us to represent infinite trajectories (four-dimensional) on our limited plot. Now we’ll try to build this kind of Carter-Penrose diagram for more physically interesting cases and analyze what we got.
+
+<!--more-->
 
 ## Compactification and Penrose Diagrams
 

@@ -1,3 +1,7 @@
+:root {
+  --main-size-large: 49rem;
+}
+
 .container img {
   display: block;
   margin-left: auto;
@@ -8,9 +12,17 @@
   align-items: stretch;
 } */
 
+#sidebar header, #sidebar #sidebar-nav-links {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
+}
+
 .site-title {
   font-family: 'Raleway', sans-serif !important;
   font-weight: 800 !important;
+}
+
+.post-title {
+  font-family: 'Lucida Grande', Arial, sans-serif !important;
 }
 
 @media (min-width: 49rem) {
@@ -35,3 +47,11 @@
     max-width: 40rem;
   }
 }
+/* @media (min-width: 80rem) {
+  .container {
+    padding-left: 128px !important;
+    padding-right: 128px !important;
+    padding-left: auto !important;
+    padding-right: auto !important;
+  }
+} */

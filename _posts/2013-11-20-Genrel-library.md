@@ -3,6 +3,7 @@ layout: post
 title:  Manual for "genrel.m" library
 date:   2013-11-20 03:44:00 -0400
 categories: Science Code
+excerpt_separator: "<!--more-->"
 tags:
   - science
   - physics
@@ -10,6 +11,8 @@ tags:
 ---
 
 This library contains the full package of Wolfram Mathematica commands to work with the mathematical apparatus of general theory of relativity. It is an open source library and can be downloaded from [here](/assets/files/2013-genrel/GenRel.m).
+
+<!--more-->
 
 > Russian manual can be found [here](/assets/files/2013-genrel/GenRel_manual.pdf).
 
