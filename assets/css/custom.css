@@ -8,9 +8,10 @@
   margin-right: auto
 }
 
-/* body {
-  align-items: stretch;
-} */
+.post-body p {
+  text-align: justify;
+  text-justify: inter-character;
+}
 
 #sidebar header, #sidebar #sidebar-nav-links {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
@@ -21,9 +22,13 @@
   font-weight: 800 !important;
 }
 
-/* .post-title {
-  font-family: 'Lucida Grande', Arial, sans-serif !important;
-} */
+body {
+  overflow: hidden;
+}
+
+.post-title {
+  font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif !important;
+}
 
 @media (min-width: 49rem) {
   body {

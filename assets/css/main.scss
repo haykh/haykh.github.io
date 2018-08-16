@@ -2,6 +2,8 @@
 # Jekyll needs front matter for SCSS files
 ---
 
-// $root-font-family: ConquerorSlab, Georgia;
+// $root-font-family: Garamond, Times, Georgia, serif !important;
+$root-font-family: Minion, Times, Georgia, serif !important;
+$root-line-height: 1.2 !default;
 $large-font-size: 1rem !default;
 @import "hydeout";
