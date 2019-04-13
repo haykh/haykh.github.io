@@ -16,7 +16,7 @@ GEM
     http_parser.rb (0.6.0)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
-    jekyll (3.7.4)
+    jekyll (3.8.5)
       addressable (~> 2.4)
       colorator (~> 1.0)
       em-websocket (~> 0.5)
@@ -29,8 +29,8 @@ GEM
       pathutil (~> 0.9)
       rouge (>= 1.7, < 4)
       safe_yaml (~> 1.0)
-    jekyll-feed (0.9.3)
-      jekyll (~> 3.3)
+    jekyll-feed (0.12.1)
+      jekyll (>= 3.7, < 5.0)
     jekyll-gist (1.5.0)
       octokit (~> 4.2)
     jekyll-paginate (1.1.0)
@@ -85,8 +85,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll (~> 3.7.3)
-  jekyll-feed (~> 0.6)
+  jekyll (~> 3.8.5)
+  jekyll-feed (~> 0.12)
   jekyll-remote-theme
   jekyll-theme-hydeout (~> 3.4)
   minima (~> 2.0)
