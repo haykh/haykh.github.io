@@ -1,6 +1,6 @@
-:root {
+/* :root {
   --main-size-large: 49rem;
-}
+} */
 
 .container img {
   display: block;
@@ -9,7 +9,6 @@
 }
 
 .post-body p {
-  text-align: justify;
   text-justify: inter-character;
 }
 
@@ -20,10 +19,6 @@
 .site-title {
   font-family: 'Raleway', sans-serif !important;
   font-weight: 800 !important;
-}
-
-body {
-  overflow: hidden;
 }
 
 .post-title {
@@ -46,10 +41,10 @@ body {
 
 @media (min-width: 49rem) {
   .container {
-    max-width: 52rem !important;
+    max-width: 56rem !important;
   }
   .container .content {
-    max-width: 40rem;
+    max-width: 46rem;
   }
 }
 /* @media (min-width: 80rem) {
