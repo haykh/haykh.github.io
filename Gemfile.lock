@@ -90,6 +90,7 @@ DEPENDENCIES
   jekyll-remote-theme
   jekyll-theme-hydeout (~> 3.4)
   minima (~> 2.0)
+  rubyzip (>= 1.2.2)
   tzinfo-data
 
 BUNDLED WITH
