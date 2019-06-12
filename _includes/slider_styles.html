@@ -2,7 +2,9 @@
 <!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
 <!-- v1.8 -->
 {% if page.image_sliders or layout.image_sliders or page.image_sliders_load_all -%}
-<link rel="stylesheet" href="{{ "/assets/sliderjs/ideal-image-slider.css" | relative_url }}">
-<link rel="stylesheet" href="{{ "/assets/sliderjs/themes/default/default.css" | relative_url }}">
-<script src="../assets/sliderjs/ideal-image-slider.min.js" type="text/javascript"></script>
+<!-- <link rel="stylesheet" href="{{ "/assets/sliderjs/ideal-image-slider.css" | relative_url }}"> -->
+<!-- <link rel="stylesheet" href="{{ "/assets/sliderjs/themes/default/default.css" | relative_url }}"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ideal-image-slider/1.5.1/ideal-image-slider.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ideal-image-slider/1.5.1/themes/default/default.min.css">
+<!-- <script src="../assets/sliderjs/ideal-image-slider.min.js" type="text/javascript"></script> -->
 {%- endif -%}
