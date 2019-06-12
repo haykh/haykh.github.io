@@ -176,5 +176,6 @@
       alt: pic2
   settings:
     height: 800
+    interval: 0
     effect: "'fade'"
     transitionDuration: 10
