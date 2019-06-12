@@ -175,7 +175,7 @@
     - src: /assets/images/2019-chernobyl-letter/pic4.png
       alt: pic2
   settings:
-    height: 800
+    height: 500
     interval: 1000000
     effect: "'fade'"
     transitionDuration: 10
