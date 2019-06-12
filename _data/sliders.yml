@@ -151,7 +151,7 @@
 
 - selector: slider20131112
   bullets: true
-  captions: true
+  # captions: false
   images:
     - src: /assets/images/2013-dissipative-mech/pic4.png
       alt: pic1
@@ -164,7 +164,7 @@
 
 - selector: slider20190612
   bullets: true
-  captions: true
+  # captions: false
   images:
     - src: /assets/images/2019-chernobyl-letter/pic1.png
       alt: pic1
