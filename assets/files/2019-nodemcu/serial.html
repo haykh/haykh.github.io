@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <style>
+    body {
+      background-color: #272727;
+      padding: 10px;
+    }
+
+    .fakeButtons {
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      border: 1px solid #000;
+      position: relative;
+      top: 6px;
+      left: 6px;
+      background-color: #ff3b47;
+      border-color: #9d252b;
+      display: inline-block;
+    }
+
+    .fakeMinimize {
+      left: 11px;
+      background-color: #ffc100;
+      border-color: #9d802c;
+    }
+
+    .fakeZoom {
+      left: 16px;
+      background-color: #00d742;
+      border-color: #049931;
+    }
+
+    .fakeMenu {
+      width: 550px;
+      box-sizing: border-box;
+      height: 25px;
+      background-color: #bbb;
+      margin: 0 auto;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+    }
+
+    .fakeScreen {
+      background-color: #151515;
+      box-sizing: border-box;
+      width: 550px;
+      margin: 0 auto;
+      padding: 20px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    p {
+      position: relative;
+      left: 50%;
+      margin-left: -8.5em;
+      text-align: left;
+      font-size: 1.25em;
+      font-family: monospace;
+      white-space: normal;
+      overflow: hidden;
+      width: 17em;
+      color: #9CD9F0;
+    }
+
+    span {
+      color: #fff;
+      font-weight: bold;
+    }
+    .cursor1 {
+      -webkit-animation: blink 1s 0s infinite forwards;
+      -moz-animation: blink 1s 0s infinite forwards;
+      -o-animation: blink 1s 0s infinite forwards;
+      animation: blink 1s 0s infinite forwards;
+    }
+
+    @-webkit-keyframes blink {
+      0% {
+        opacity: 0;
+      }
+      40% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @-moz-keyframes blink {
+      0% {
+        opacity: 0;
+      }
+      40% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @-o-keyframes blink {
+      0% {
+        opacity: 0;
+      }
+      40% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 0;
+      }
+      40% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @-webkit-keyframes type {
+      to {
+        width: 17em;
+      }
+    }
+
+    @-moz-keyframes type {
+      to {
+        width: 17em;
+      }
+    }
+
+    @-o-keyframes type {
+      to {
+        width: 17em;
+      }
+    }
+
+    @keyframes type {
+      to {
+        width: 17em;
+      }
+    }
+    .fakeScreen {
+      height: 600px;
+      overflow: scroll;
+    }
+  </style>
+<body>
+  <div class=fakeMenu>
+    <div class="fakeButtons fakeClose"></div>
+    <div class="fakeButtons fakeMinimize"></div>
+    <div class="fakeButtons fakeZoom"></div>
+  </div>
+  <div class="fakeScreen">
+  </div>
+
+<script>
+  var prev_text = "";
+  function loadReq(call, callback) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        callback(this.responseText);
+      }
+    };
+    xhttp.open("GET", call, true);
+    xhttp.send();
+  }
+  window.setInterval(function(){
+    loadReq("/getSerialMonitor", function(response) {
+      if (prev_text != response) {
+        console.log(response);
+        text_to_put = response.replace(/\n/g, "</p><p id='serial'>> ");
+        text_to_put = text_to_put.replace("</p>", "");
+        text_to_put += "<span class='cursor1'>_</span></p>"
+        $('.fakeScreen').html(text_to_put);
+        prev_text = response;
+        $('.fakeScreen').scrollTop($('.fakeScreen')[0].scrollHeight);
+      }
+    });
+  }, 100);
+
+</script>
+
+</body>
+</html>
