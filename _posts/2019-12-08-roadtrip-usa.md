@@ -27,7 +27,7 @@ You know that I hate traveling right? You might also know that I love doing thin
   <iframe style="pointer-events:none;" src="https://www.google.com/maps/d/u/0/embed?mid=1l25uc9mmtEnpboXUXFbw2ugwFDanr-OD" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen>
   </iframe>
 </div>
-_Trip route show above. Impressive, eh?_
+_Trip route shown above. Impressive, eh?_
 
 <br>
 
