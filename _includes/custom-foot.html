@@ -6,7 +6,44 @@
   window.onload = function() {
     Gifffer();
   }
+  function mapScrollOff() {
+    var element = document.getElementById("map");
+    var className = "mapscrolloff";
+    var currentClassName = element.getAttribute("class");
+    if (typeof currentClassName !== "undefined" && currentClassName) {
+      if (!currentClassName.includes(className)) {
+        element.setAttribute("class", currentClassName + " " + className);
+      }
+    } else {
+      element.setAttribute("class", className);
+    }
+  }
+  function mapScrollOn() {
+    var element = document.getElementById("map");
+    var className = "mapscrolloff";
+    var currentClassName = element.getAttribute("class");
+    if (typeof currentClassName!== "undefined" && currentClassName) {
+      var class2RemoveIndex = currentClassName.indexOf(className);
+      if (class2RemoveIndex != -1) {
+          var class2Remove = currentClassName.substr(class2RemoveIndex, className.length);
+          var updatedClassName = currentClassName.replace(class2Remove,"").trim();
+          element.setAttribute("class",updatedClassName);
+      }
+    } else {
+      element.removeAttribute("class");
+    }
+  }
+
+
+  // function mapScrollOn() {
+  //   var element = document.getElementById("map");
+  //   element.className = element.className.replace(/\bscrolloff\b/g, "");
+  // }
+  // function mapScrollOff() {
+  //   element.classList.remove('scrolloff');
+  // }
 </script>
+
 <!-- <script>
 window.addEventListener('scroll', function(){
   document.getElementsByClassName('container')[0].scrollTop += pageYOffset;

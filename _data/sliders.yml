@@ -179,3 +179,175 @@
     interval: 1000000
     effect: "'fade'"
     transitionDuration: 10
+
+- selector: slider20191208a
+  bullets: true
+  images:
+    - src: https://live.staticflickr.com/65535/48524501212_c936316610_k_d.jpg
+      alt: pic1
+    - src: https://live.staticflickr.com/65535/48524501137_97db6951da_k_d.jpg
+      alt: pic2
+    - src: https://live.staticflickr.com/65535/48524334721_6fea219b41_k_d.jpg
+      alt: pic3
+  settings:
+    height: 600
+    interval: 6000
+    effect: "'fade'"
+    transitionDuration: 500
+
+- selector: slider20191208b
+  bullets: true
+  images:
+    - src: https://live.staticflickr.com/65535/48524334516_722a568aad_k_d.jpg
+      alt: pic1
+    - src: https://live.staticflickr.com/65535/48524334421_e58f579d81_k_d.jpg
+      alt: pic2
+    - src: https://live.staticflickr.com/65535/48524500587_1c6872ffb3_k_d.jpg
+      alt: pic3
+    - src: https://live.staticflickr.com/65535/48524500357_7c363dfe4b_k_d.jpg
+      alt: pic4
+    - src: https://live.staticflickr.com/65535/48524499462_448fd6fca4_k_d.jpg
+      alt: pic5
+  settings:
+    height: 600
+    interval: 6000
+    effect: "'fade'"
+    transitionDuration: 500
+
+- selector: slider20191208c
+  bullets: true
+  images:
+    - src: https://live.staticflickr.com/65535/48524499887_e429c1420b_k_d.jpg
+      alt: pic1
+    - src: https://live.staticflickr.com/65535/48524499827_08ab1a638c_k_d.jpg
+      alt: pic2
+    - src: https://live.staticflickr.com/65535/48524499717_a2db0263e0_k_d.jpg
+      alt: pic3
+    - src: https://live.staticflickr.com/65535/48524333211_6956d23bc3_k_d.jpg
+      alt: pic4
+    - src: https://live.staticflickr.com/65535/48524333136_7e3a67dd60_k_d.jpg
+      alt: pic5
+  settings:
+    height: 600
+    interval: 6000
+    effect: "'fade'"
+    transitionDuration: 500
+
+- selector: slider20191208d
+  bullets: true
+  images:
+    - src: https://live.staticflickr.com/65535/48524332586_bafe03d621_k_d.jpg
+      alt: pic1
+    - src: https://live.staticflickr.com/65535/48524499072_f469775872_k_d.jpg
+      alt: pic2
+    - src: https://live.staticflickr.com/65535/48524332401_17fa3d57b3_k_d.jpg
+      alt: pic3
+    - src: https://live.staticflickr.com/65535/48524332281_f35eb170ba_k_d.jpg
+      alt: pic4
+  settings:
+    height: 600
+    interval: 6000
+    effect: "'fade'"
+    transitionDuration: 500
+
+- selector: slider20191208e
+  bullets: true
+  images:
+    - src: https://live.staticflickr.com/65535/48524332021_f83e900bcf_k_d.jpg
+      alt: pic1
+    - src: https://live.staticflickr.com/65535/48524332141_1ecd113089_k_d.jpg
+      alt: pic2
+    - src: https://live.staticflickr.com/65535/48524497892_99803f8565_k_d.jpg
+      alt: pic3
+    - src: https://live.staticflickr.com/65535/48524331086_57b349073a_k_d.jpg
+      alt: pic4
+  settings:
+    height: 600
+    interval: 6000
+    effect: "'fade'"
+    transitionDuration: 500
+
+- selector: slider20191208f
+  bullets: true
+  images:
+    - src: https://live.staticflickr.com/65535/48524331026_1882bde9e4_k_d.jpg
+      alt: pic1
+    - src: https://live.staticflickr.com/65535/48524330966_f6ff081ecb_k_d.jpg
+      alt: pic2
+    - src: https://live.staticflickr.com/65535/48524330501_303665ebd3_k_d.jpg
+      alt: pic3
+    - src: https://live.staticflickr.com/65535/48524496467_defe19a591_k_d.jpg
+      alt: pic4
+  settings:
+    height: 600
+    interval: 6000
+    effect: "'fade'"
+    transitionDuration: 500
+
+- selector: slider20191208g
+  bullets: true
+  images:
+    - src: https://live.staticflickr.com/65535/48524330326_eea7e6c644_k_d.jpg
+      alt: pic1
+    - src: https://live.staticflickr.com/65535/48524496202_2b87c661f0_k_d.jpg
+      alt: pic2
+    - src: https://live.staticflickr.com/65535/48524496147_e553e17fa7_k_d.jpg
+      alt: pic3
+    - src: https://live.staticflickr.com/65535/48524330031_7af22b9357_k_d.jpg
+      alt: pic4
+  settings:
+    height: 600
+    interval: 6000
+    effect: "'fade'"
+    transitionDuration: 500
+
+- selector: slider20191208h
+  bullets: true
+  images:
+    - src: https://live.staticflickr.com/65535/48524329996_93bf9f999b_k_d.jpg
+      alt: pic1
+    - src: https://live.staticflickr.com/65535/48524495922_5c70cd5662_k_d.jpg
+      alt: pic2
+    - src: https://live.staticflickr.com/65535/48524329761_d361a065a6_k_d.jpg
+      alt: pic3
+    - src: https://live.staticflickr.com/65535/48524329691_8ba3369069_k_d.jpg
+      alt: pic4
+  settings:
+    height: 600
+    interval: 6000
+    effect: "'fade'"
+    transitionDuration: 500
+
+- selector: slider20191208i
+  bullets: true
+  images:
+    - src: https://live.staticflickr.com/65535/48524495512_7a7452e142_k_d.jpg
+      alt: pic1
+    - src: https://live.staticflickr.com/65535/48524329446_8be77586a4_k_d.jpg
+      alt: pic2
+    - src: https://live.staticflickr.com/65535/48524329406_b209a1241b_k_d.jpg
+      alt: pic3
+    - src: https://live.staticflickr.com/65535/48524495382_ab70eb1082_k_d.jpg
+      alt: pic4
+  settings:
+    height: 600
+    interval: 6000
+    effect: "'fade'"
+    transitionDuration: 500
+
+- selector: slider20191208j
+  bullets: true
+  images:
+    - src: https://live.staticflickr.com/65535/48524495267_afa3d7afcb_k_d.jpg
+      alt: pic1
+    - src: https://live.staticflickr.com/65535/48524495147_f52545d1d8_k_d.jpg
+      alt: pic2
+    - src: https://live.staticflickr.com/65535/48524329011_26d4ba091f_k_d.jpg
+      alt: pic3
+    - src: https://live.staticflickr.com/65535/48524494962_291d5c1c61_k_d.jpg
+      alt: pic4
+  settings:
+    height: 600
+    interval: 6000
+    effect: "'fade'"
+    transitionDuration: 500

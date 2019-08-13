@@ -41,12 +41,68 @@
 
 @media (min-width: 49rem) {
   .container {
-    max-width: 56rem !important;
+    overflow-x: hidden;
+    width: 80%;
+    max-width: 90rem !important;
   }
   .container .content {
-    max-width: 46rem;
+    width: 95%;
+    max-width: 85rem;
   }
 }
+
+@media (min-width: 100rem) {
+  #sidebar {
+    margin: 0 0 0 auto;
+    border-left: 6px solid white;
+  }
+  .container {
+    margin: 0 auto 0 0;
+  }
+}
+
+.mapscrolloff iframe {
+  pointer-events: none;
+}
+
+.parallax {
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parallax > h1 {
+  color: white;
+  text-align: center;
+  line-height: 500px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+}
+.cover {
+  min-height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+
+@media (min-width: 49rem) {
+  .parallax {
+    margin-left: -4rem;
+    width: calc(100% + 13rem);
+  }
+}
+
+@media (max-width: 49rem) {
+  .parallax {
+    background-attachment: scroll;
+  }
+  .parallax > h1 {
+    line-height: 100%;
+    padding-top: 50px;
+  }
+}
+
+
 /* @media (min-width: 80rem) {
   .container {
     padding-left: 128px !important;

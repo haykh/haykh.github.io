@@ -9,9 +9,6 @@
   {%- assign iis_slider_array = iis_slider_array | concat: site_sliders | uniq -%}
 {%- endif -%}
 {% if iis_slider_array != empty %}
-  <!-- <script src="{{ "/assets/sliderjs/ideal-image-slider.min.js" | relative_url }}"></script> -->
-  <!-- <script src="{{ "/assets/sliderjs/extensions/bullet-nav/iis-bullet-nav.js" | relative_url }}"></script> -->
-  <!-- <script src="{{ "/assets/sliderjs/extensions/captions/iis-captions.js" | relative_url }}"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ideal-image-slider/1.5.1/ideal-image-slider.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ideal-image-slider/1.5.1/extensions/bullet-nav/iis-bullet-nav.min.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ideal-image-slider/1.5.1/extensions/captions/iis-captions.min.js" type="text/javascript"></script>
