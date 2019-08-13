@@ -62,7 +62,7 @@
 }
 
 .mapscrolloff iframe {
-  pointer-events: none !important;
+  pointer-events: none;
 }
 
 .parallax {
