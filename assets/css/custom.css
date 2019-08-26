@@ -102,12 +102,31 @@
   }
 }
 
+.category ul, .posts-for-tag ul {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+}
+.category li, 
+.posts-for-tag li {
+  padding: 10%;
+  background-color: #f0f0f0;
+  display: inline-block;
+  margin: 0 0 1em;
+  width: 100%;
+}
+.category li:hover, 
+.posts-for-tag li:hover {
+  background-color: #b0b0b0;
+  cursor: pointer;
+}
+.category li:hover a, 
+.category li:hover small, 
+.posts-for-tag li:hover a,
+.posts-for-tag li:hover small {
+  color: #fff;
+}
+.category li a, .posts-for-tag li a {
+  font-size: 1rem;
+}
 
-/* @media (min-width: 80rem) {
-  .container {
-    padding-left: 128px !important;
-    padding-right: 128px !important;
-    padding-left: auto !important;
-    padding-right: auto !important;
-  }
-} */
