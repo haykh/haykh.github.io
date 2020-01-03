@@ -18,38 +18,34 @@ class Particle {
 }
 
 class ParticlePopulation {
-  #size = 0;
-  #prtls;
   constructor(particles) {
-    this.#prtls = particles;
+    if (particles)
+      this.size = particles.length;
+    else
+      this.size = 0
+    this.prtls = particles;
   }
   append(prtls) {
     if (prtls.size > 0)
       prtls.forEach(prtl => this.add(prtl));
   }
   add(prtl) {
-    if (this.#prtls)
-      this.#prtls.push(prtl)
+    if (this.prtls)
+      this.prtls.push(prtl)
     else
-      this.#prtls = [prtl]
-    this.#size += 1;
+      this.prtls = [prtl]
+    this.size += 1;
   }
   push() {
-    if (this.#prtls)
-      this.#prtls.forEach(prtl => prtl.push());
+    if (this.prtls)
+      this.prtls.forEach(prtl => prtl.push());
   }
   draw(col=255, rad=1) {
-    if (this.#prtls) {
+    if (this.prtls) {
       fill(col);
       noStroke();
-      this.#prtls.forEach(prtl => prtl.draw(rad));
+      this.prtls.forEach(prtl => prtl.draw(rad));
     }
-  }
-  get prtls() {
-    return this.#prtls;
-  }
-  get size() {
-    return this.#size;
   }
 }
 
@@ -94,13 +90,10 @@ class Meshblock {
 }
 
 class QuadTree {
-  #isParent = false;
-  #block;
-  #nmax;
-  #child_11; #child_12; #child_21; #child_22;
   constructor(nmax, mblock) {
-    this.#block = mblock;
-    this.#nmax = nmax;
+    this.isParent = false;
+    this.block = mblock;
+    this.nmax = nmax;
     this.population = new ParticlePopulation()
   }
   append(pop) {
@@ -108,46 +101,43 @@ class QuadTree {
       pop.prtls.forEach(prtl => this.add(prtl));
   }
   add(prtl) {
-    if (this.population.size < this.#nmax) {
+    if (this.population.size < this.nmax) {
       this.population.add(prtl);
     } else {
-      if (!this.#isParent) {
+      if (!this.isParent) {
         this.split();
       }
-      if (this.#child_11.consists(prtl)) {
-        this.#child_11.add(prtl);
-      } else if (this.#child_12.consists(prtl)) {
-        this.#child_12.add(prtl);
-      } else if (this.#child_21.consists(prtl)) {
-        this.#child_21.add(prtl);
+      if (this.child_11.consists(prtl)) {
+        this.child_11.add(prtl);
+      } else if (this.child_12.consists(prtl)) {
+        this.child_12.add(prtl);
+      } else if (this.child_21.consists(prtl)) {
+        this.child_21.add(prtl);
       } else {
-        this.#child_22.add(prtl);
+        this.child_22.add(prtl);
       }
     }
   }
   split() {
-    this.#isParent = true;
-    this.#child_11 = new QuadTree(this.#nmax, this.#block.subblock_11);
-    this.#child_12 = new QuadTree(this.#nmax, this.#block.subblock_12);
-    this.#child_21 = new QuadTree(this.#nmax, this.#block.subblock_21);
-    this.#child_22 = new QuadTree(this.#nmax, this.#block.subblock_22);
-  }
-  get block() {
-    return this.#block;
+    this.isParent = true;
+    this.child_11 = new QuadTree(this.nmax, this.block.subblock_11);
+    this.child_12 = new QuadTree(this.nmax, this.block.subblock_12);
+    this.child_21 = new QuadTree(this.nmax, this.block.subblock_21);
+    this.child_22 = new QuadTree(this.nmax, this.block.subblock_22);
   }
   consists(prtl) {
-    return this.#block.consists(prtl);
+    return this.block.consists(prtl);
   }
   findNeighborhood(prtl, radius, neighbors) {
     if (!neighbors)
       neighbors = []
-    if (this.#block.intersects(prtl.pos.x, prtl.pos.y, radius)) {
+    if (this.block.intersects(prtl.pos.x, prtl.pos.y, radius)) {
       this.extractParticles(prtl.pos.x, prtl.pos.y, radius, neighbors);
-      if (this.#isParent) {
-        this.#child_11.findNeighborhood(prtl, radius, neighbors);
-        this.#child_12.findNeighborhood(prtl, radius, neighbors);
-        this.#child_21.findNeighborhood(prtl, radius, neighbors);
-        this.#child_22.findNeighborhood(prtl, radius, neighbors);
+      if (this.isParent) {
+        this.child_11.findNeighborhood(prtl, radius, neighbors);
+        this.child_12.findNeighborhood(prtl, radius, neighbors);
+        this.child_21.findNeighborhood(prtl, radius, neighbors);
+        this.child_22.findNeighborhood(prtl, radius, neighbors);
       }
     } else {
       return;
@@ -165,13 +155,13 @@ class QuadTree {
       }
   }
   draw() {
-    this.#block.draw();
+    this.block.draw();
     // this.population.draw();
-    if (this.#isParent) {
-      this.#child_11.draw();
-      this.#child_12.draw();
-      this.#child_21.draw();
-      this.#child_22.draw();
+    if (this.isParent) {
+      this.child_11.draw();
+      this.child_12.draw();
+      this.child_21.draw();
+      this.child_22.draw();
     }
   }
 }

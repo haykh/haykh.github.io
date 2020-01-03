@@ -134,3 +134,7 @@ body {
 .category li a, .posts-for-tag li a {
   font-size: 1rem;
 }
+
+/* #sidebar {
+  background-color: rgba(255,255,255,0) !important;
+} */

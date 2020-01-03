@@ -3,6 +3,7 @@ var population;
 var vel_mag = 0.5;
 var nprtls = 50;
 var nei_rad0 = 60, nei_rad;
+var old_mainwidth = 0, regime_changed = false;
 
 var bg_canvas;
 
@@ -17,6 +18,8 @@ function resizeBGCanvas() {
   let mainwin = document.getElementsByTagName('main')[0];
   let xleft = mainwin.getBoundingClientRect().x;
   let mainwidth = mainwin.offsetWidth;
+  regime_changed = (abs(old_mainwidth - mainwidth) > 10);
+  old_mainwidth = mainwidth;
   if (xleft < 1) {
     resizeCanvas(windowWidth, windowHeight);
   } else {
@@ -27,7 +30,9 @@ function resizeBGCanvas() {
 
 function windowResized() {
   resizeBGCanvas();
-  reshuffleParticles(population);
+  if (regime_changed) {
+    reshuffleParticles(population);
+  }
 }
 
 function setup() {
@@ -45,6 +50,7 @@ function setup() {
                             random(-vel_mag, vel_mag), random(-vel_mag, vel_mag))
     population.add(prtl);
   }
+  population.draw();
 }
 
 function draw() {
