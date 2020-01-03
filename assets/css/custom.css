@@ -25,6 +25,11 @@
   font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif !important;
 }
 
+body {
+  background-image: linear-gradient(rgb(30, 30, 30), rgb(0, 0, 0));
+}
+
+/*
 @media (min-width: 49rem) {
   body {
     background-image: url('../images/dark.png');
@@ -38,16 +43,16 @@
     background-size: 100%;
   }
 }
-
+*/
 @media (min-width: 49rem) {
   .container {
     overflow-x: hidden;
     width: 80%;
-    max-width: 90rem !important;
+    max-width: 70rem !important;
   }
   .container .content {
     width: 95%;
-    max-width: 85rem;
+    max-width: 65rem;
   }
 }
 
@@ -107,7 +112,7 @@
   grid-gap: 1em;
   grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
 }
-.category li, 
+.category li,
 .posts-for-tag li {
   padding: 10%;
   background-color: #f0f0f0;
@@ -115,13 +120,13 @@
   margin: 0 0 1em;
   width: 100%;
 }
-.category li:hover, 
+.category li:hover,
 .posts-for-tag li:hover {
   background-color: #b0b0b0;
   cursor: pointer;
 }
-.category li:hover a, 
-.category li:hover small, 
+.category li:hover a,
+.category li:hover small,
 .posts-for-tag li:hover a,
 .posts-for-tag li:hover small {
   color: #fff;
@@ -129,4 +134,3 @@
 .category li a, .posts-for-tag li a {
   font-size: 1rem;
 }
-
