@@ -5,5 +5,5 @@ function periodicLimit (n, nlow, nhigh) {
   while (n < nlow) {
     n += (nhigh - nlow);
   }
-  return n
+  return n;
 }

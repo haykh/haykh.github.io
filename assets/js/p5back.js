@@ -1,78 +1,100 @@
-var qtree;
-var population;
-var vel_mag = 0.5;
-var nprtls = 50;
-var nei_rad0 = 60, nei_rad;
-var old_mainwidth = 0, regime_changed = false;
+function bgSketch(nprtls, mainQ) {
+  return function ($) {
+    var population;
+    var vel_mag = 0.5;
+    // var nprtls = 50;
+    var nei_rad0 = 60, nei_rad;
+    var old_mainwidth = 0, regime_changed = false;
+    var bg_canvas;
+    var activeQ = true;
 
-var bg_canvas;
+    function reshuffleParticles(pop) {
+      pop.prtls.forEach(function(prtl) {
+        prtl.pos.x = $.random(0, $.width);
+        prtl.pos.y = $.random(0, $.height);
+      });
+    }
 
-function reshuffleParticles(pop) {
-  pop.prtls.forEach(function(prtl) {
-    prtl.pos.x = random(0, width);
-    prtl.pos.y = random(0, height);
-  });
-}
+    function resizeBGCanvas() {
+      if (mainQ) {
+        let mainwin = document.getElementsByTagName('main')[0];
+        let xleft = mainwin.getBoundingClientRect().x;
+        let mainwidth = mainwin.offsetWidth;
+        regime_changed = ($.abs(old_mainwidth - mainwidth) > 10);
+        old_mainwidth = mainwidth;
+        if (xleft < 1) {
+          $.resizeCanvas($.windowWidth, $.windowHeight);
+        } else {
+          $.resizeCanvas(xleft, $.windowHeight);
+        }
+        nei_rad = nei_rad0 * $.sqrt($.min($.width, $.height) / 300);
+      } else {
+        let mainwin = document.getElementsByTagName('main')[0];
+        let xleft = mainwin.getBoundingClientRect().x;
+        let mainwidth = mainwin.offsetWidth;
+        mainwidth = $.windowWidth - xleft - mainwidth;
+        regime_changed = ($.abs(old_mainwidth - mainwidth) > 10);
+        old_mainwidth = mainwidth;
+        console.log('trigger resize');
+        if (xleft < 1) {
+          console.log('to small');
+          activeQ = false;
+          $.resizeCanvas(1, 1);
+          // bg_canvas.position(0, 0);
+        } else {
+          console.log('to large');
+          activeQ = true;
+          $.resizeCanvas(mainwidth, $.windowHeight);
+          bg_canvas.position(mainwin.offsetWidth + xleft, 0);
+        }
+        nei_rad = nei_rad0 * $.sqrt($.min($.width, $.height) / 300);
+      }
+    }
 
-function resizeBGCanvas() {
-  let mainwin = document.getElementsByTagName('main')[0];
-  let xleft = mainwin.getBoundingClientRect().x;
-  let mainwidth = mainwin.offsetWidth;
-  regime_changed = (abs(old_mainwidth - mainwidth) > 10);
-  old_mainwidth = mainwidth;
-  if (xleft < 1) {
-    resizeCanvas(windowWidth, windowHeight);
-  } else {
-    resizeCanvas(xleft, windowHeight);
+    $.windowResized = function() {
+      resizeBGCanvas();
+      if (regime_changed) {
+        reshuffleParticles(population);
+      }
+    }
+
+    $.setup = function() {
+      bg_canvas = $.createCanvas(0, 0);
+      bg_canvas.position(0, 0);
+      resizeBGCanvas();
+      bg_canvas.style('z-index', '-1');
+      $.frameRate(30);
+      population = new ParticlePopulation($);
+      for (var i = 0; i < nprtls; ++i) {
+        let prtl = new Particle($,
+                                $.random(0, $.width),
+                                $.random(0, $.height),
+                                $.random(-vel_mag, vel_mag), $.random(-vel_mag, vel_mag))
+        population.add(prtl);
+      }
+    }
+
+    $.draw = function() {
+      $.clear();
+      if (activeQ) {
+        let qtree = new QuadTree($, 5, new Meshblock($, 0, $.width, 0, $.height))
+        qtree.append(population);
+        population.push(vel_mag);
+        $.noFill();
+        $.strokeWeight(1);
+        population.prtls.forEach(function(prtl) {
+          nhood = new ParticlePopulation($, qtree.findNeighborhood(prtl, nei_rad));
+          nhood.prtls.forEach(function(nei) {
+            let dst = $.dist(nei.pos.x, nei.pos.y, prtl.pos.x, prtl.pos.y);
+            let col = $.map(dst, 0, nei_rad, 255, 0);
+            $.stroke(col, 23, 123);
+            $.line(nei.pos.x, nei.pos.y, prtl.pos.x, prtl.pos.y);
+          });
+        });
+        population.draw();
+      }
+    }
   }
-  nei_rad = nei_rad0 * sqrt(min(width, height) / 300);
 }
-
-function windowResized() {
-  resizeBGCanvas();
-  if (regime_changed) {
-    reshuffleParticles(population);
-  }
-}
-
-function setup() {
-  bg_canvas = createCanvas(windowWidth, windowHeight);
-  resizeBGCanvas();
-  bg_canvas.position(0, 0);
-  bg_canvas.style('z-index', '-1');
-  // background(23);
-  frameRate(30);
-  population = new ParticlePopulation();
-  qtree = new QuadTree(5, new Meshblock(0, width, 0, height))
-  for (var i = 0; i < nprtls; ++i) {
-    let prtl = new Particle(mouseX + random(0, width),
-                            mouseY + random(0, height),
-                            random(-vel_mag, vel_mag), random(-vel_mag, vel_mag))
-    population.add(prtl);
-  }
-  population.draw();
-}
-
-function draw() {
-  // background(23);
-  clear();
-  qtree = new QuadTree(5, new Meshblock(0, width, 0, height))
-  qtree.append(population);
-
-  population.push();
-
-  noFill();
-  strokeWeight(1);
-  population.prtls.forEach(function(prtl) {
-    nhood = new ParticlePopulation(qtree.findNeighborhood(prtl, nei_rad));
-    nhood.prtls.forEach(function(nei) {
-      let dst = dist(nei.pos.x, nei.pos.y, prtl.pos.x, prtl.pos.y);
-      let col = map(dst, 0, nei_rad, 255, 0);
-      stroke(col, 23, 123);
-      line(nei.pos.x, nei.pos.y, prtl.pos.x, prtl.pos.y);
-    });
-  });
-
-  population.draw(col=255, rad=1);
-
-}
+new p5(bgSketch(50, true));
+new p5(bgSketch(30, false));

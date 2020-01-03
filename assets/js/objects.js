@@ -1,24 +1,26 @@
 class Particle {
-  constructor (x, y, vx, vy) {
-    this.pos = createVector(x, y);
-    this.vel = createVector(vx, vy);
+  constructor (sketch, x, y, vx, vy) {
+    this.sketch = sketch;
+    this.pos = this.sketch.createVector(x, y);
+    this.vel = this.sketch.createVector(vx, vy);
   }
-  push() {
+  push(vmag) {
     this.pos.add(this.vel);
-    this.pos.x = periodicLimit(this.pos.x, 0, width);
-    this.pos.y = periodicLimit(this.pos.y, 0, height);
-    let velmag = vel_mag / 20;
-    this.vel.x += random(-velmag, velmag);
-    this.vel.y += random(-velmag, velmag)
-    this.vel.limit(vel_mag);
+    this.pos.x = periodicLimit(this.pos.x, 0, this.sketch.width);
+    this.pos.y = periodicLimit(this.pos.y, 0, this.sketch.height);
+    let velmag = vmag / 20;
+    this.vel.x += this.sketch.random(-velmag, velmag);
+    this.vel.y += this.sketch.random(-velmag, velmag)
+    this.vel.limit(vmag);
   }
   draw(rad=1) {
-    circle(this.pos.x, this.pos.y, 2*rad);
+    this.sketch.circle(this.pos.x, this.pos.y, 2*rad);
   }
 }
 
 class ParticlePopulation {
-  constructor(particles) {
+  constructor(sketch, particles) {
+    this.sketch = sketch;
     if (particles)
       this.size = particles.length;
     else
@@ -36,21 +38,22 @@ class ParticlePopulation {
       this.prtls = [prtl]
     this.size += 1;
   }
-  push() {
+  push(vmag) {
     if (this.prtls)
-      this.prtls.forEach(prtl => prtl.push());
+      this.prtls.forEach(prtl => prtl.push(vmag));
   }
   draw(col=255, rad=1) {
     if (this.prtls) {
-      fill(col);
-      noStroke();
+      this.sketch.fill(255);
+      this.sketch.noStroke();
       this.prtls.forEach(prtl => prtl.draw(rad));
     }
   }
 }
 
 class Meshblock {
-  constructor (xmin, xmax, ymin, ymax) {
+  constructor (sketch, xmin, xmax, ymin, ymax) {
+    this.sketch = sketch;
     this.xmin = xmin;
     this.xmax = xmax;
     this.ymin = ymin;
@@ -61,36 +64,41 @@ class Meshblock {
             (prtl.pos.y >= this.ymin) && (prtl.pos.y < this.ymax));
   }
   intersects(xc, yc, rad) {
-    let closest_x = max(this.xmin, min(xc, this.xmax))
-    let closest_y = max(this.ymin, min(yc, this.ymax))
-    return (dist(closest_x, closest_y, xc, yc) < rad)
+    let closest_x = this.sketch.max(this.xmin, this.sketch.min(xc, this.xmax))
+    let closest_y = this.sketch.max(this.ymin, this.sketch.min(yc, this.ymax))
+    return (this.sketch.dist(closest_x, closest_y, xc, yc) < rad)
   }
   get subblock_11() {
-    return (new Meshblock(this.xmin, (this.xmax+this.xmin)*0.5,
+    return (new Meshblock(this.sketch,
+                          this.xmin, (this.xmax+this.xmin)*0.5,
                           this.ymin, (this.ymax+this.ymin)*0.5));
   }
   get subblock_12() {
-    return (new Meshblock((this.xmax+this.xmin)*0.5, this.xmax,
+    return (new Meshblock(this.sketch,
+                          (this.xmax+this.xmin)*0.5, this.xmax,
                           this.ymin, (this.ymax+this.ymin)*0.5));
   }
   get subblock_21() {
-    return (new Meshblock(this.xmin, (this.xmax+this.xmin)*0.5,
+    return (new Meshblock(this.sketch,
+                          this.xmin, (this.xmax+this.xmin)*0.5,
                           (this.ymax+this.ymin)*0.5, this.ymax));
   }
   get subblock_22() {
-    return (new Meshblock((this.xmax+this.xmin)*0.5, this.xmax,
+    return (new Meshblock(this.sketch,
+                          (this.xmax+this.xmin)*0.5, this.xmax,
                           (this.ymax+this.ymin)*0.5, this.ymax));
   }
   draw() {
-    noFill();
-    stroke(255);
-    strokeWeight(1);
-    rect(this.xmin, this.ymin, this.xmax-this.xmin, this.ymax-this.ymin);
+    this.sketch.noFill();
+    this.sketch.stroke(255);
+    this.sketch.strokeWeight(1);
+    this.sketch.rect(this.xmin, this.ymin, this.xmax-this.xmin, this.ymax-this.ymin);
   }
 }
 
 class QuadTree {
-  constructor(nmax, mblock) {
+  constructor(sketch, nmax, mblock) {
+    this.sketch = sketch;
     this.isParent = false;
     this.block = mblock;
     this.nmax = nmax;
@@ -120,10 +128,10 @@ class QuadTree {
   }
   split() {
     this.isParent = true;
-    this.child_11 = new QuadTree(this.nmax, this.block.subblock_11);
-    this.child_12 = new QuadTree(this.nmax, this.block.subblock_12);
-    this.child_21 = new QuadTree(this.nmax, this.block.subblock_21);
-    this.child_22 = new QuadTree(this.nmax, this.block.subblock_22);
+    this.child_11 = new QuadTree(this.sketch, this.nmax, this.block.subblock_11);
+    this.child_12 = new QuadTree(this.sketch, this.nmax, this.block.subblock_12);
+    this.child_21 = new QuadTree(this.sketch, this.nmax, this.block.subblock_21);
+    this.child_22 = new QuadTree(this.sketch, this.nmax, this.block.subblock_22);
   }
   consists(prtl) {
     return this.block.consists(prtl);
@@ -148,7 +156,7 @@ class QuadTree {
     if (this.population.size > 0)
       for (var i = 0; i < this.population.size; ++i) {
         let prtl = this.population.prtls[i];
-        let dst = dist(xc, yc, prtl.pos.x, prtl.pos.y);
+        let dst = this.sketch.dist(xc, yc, prtl.pos.x, prtl.pos.y);
         if (dst < rad && dst > 0.0001) {
           neighbors.push(prtl);
         }
