@@ -35,14 +35,11 @@ function bgSketch(nprtls, mainQ) {
         mainwidth = $.windowWidth - xleft - mainwidth;
         regime_changed = ($.abs(old_mainwidth - mainwidth) > 10);
         old_mainwidth = mainwidth;
-        console.log('trigger resize');
         if (xleft < 1) {
-          console.log('to small');
           activeQ = false;
           $.resizeCanvas(1, 1);
           // bg_canvas.position(0, 0);
         } else {
-          console.log('to large');
           activeQ = true;
           $.resizeCanvas(mainwidth, $.windowHeight);
           bg_canvas.position(mainwin.offsetWidth + xleft, 0);
