@@ -16,10 +16,10 @@ function bgSketch(nprtls, mainQ) {
     }
 
     function resizeBGCanvas() {
+      let mainwin = document.getElementsByTagName('main')[0];
+      let xleft = mainwin.getBoundingClientRect().x;
+      let mainwidth = mainwin.offsetWidth;
       if (mainQ) {
-        let mainwin = document.getElementsByTagName('main')[0];
-        let xleft = mainwin.getBoundingClientRect().x;
-        let mainwidth = mainwin.offsetWidth;
         regime_changed = ($.abs(old_mainwidth - mainwidth) > 10);
         old_mainwidth = mainwidth;
         if (xleft < 1) {
@@ -29,16 +29,12 @@ function bgSketch(nprtls, mainQ) {
         }
         nei_rad = nei_rad0 * $.sqrt($.min($.width, $.height) / 300);
       } else {
-        let mainwin = document.getElementsByTagName('main')[0];
-        let xleft = mainwin.getBoundingClientRect().x;
-        let mainwidth = mainwin.offsetWidth;
         mainwidth = $.windowWidth - xleft - mainwidth;
         regime_changed = ($.abs(old_mainwidth - mainwidth) > 10);
         old_mainwidth = mainwidth;
         if (xleft < 1) {
           activeQ = false;
           $.resizeCanvas(1, 1);
-          // bg_canvas.position(0, 0);
         } else {
           activeQ = true;
           $.resizeCanvas(mainwidth, $.windowHeight);
@@ -93,5 +89,7 @@ function bgSketch(nprtls, mainQ) {
     }
   }
 }
-new p5(bgSketch(50, true));
-new p5(bgSketch(30, false));
+window.addEventListener('load', (event) => {
+  new p5(bgSketch(50, true));
+  new p5(bgSketch(30, false));
+});

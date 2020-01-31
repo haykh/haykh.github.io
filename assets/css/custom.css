@@ -134,3 +134,39 @@ body {
 .category li a, .posts-for-tag li a {
   font-size: 1rem;
 }
+
+#aboutme {
+  background-image: url("/assets/images/me.jpg");
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+#aboutme-btc {
+  background-image: url("/assets/images/btc_qr.png");
+  background-size: cover;
+}
+@media (min-width: 49rem) {
+  #aboutme {
+    width: 250px; 
+    height: 250px;
+  }
+  #aboutme-btc {
+    width: 150px;
+    height: 150px;
+  }
+}
+@media (max-width: 49rem) {
+  #aboutme {
+    width: 150px;
+    height: 150px;
+  }
+  #aboutme-btc {
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
