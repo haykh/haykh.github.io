@@ -31,14 +31,14 @@ body {
 
 @media (min-width: 49rem) {
   body {
-    background-image: url('../images/dark.png');
+    background-image: url('../images/dark.jpg');
     background-size: cover;
   }
 }
 
 @media (max-width: 49rem) {
   body {
-    background-image: url('../images/dark.png');
+    background-image: url('../images/dark.jpg');
     background-size: 100%;
   }
 }
