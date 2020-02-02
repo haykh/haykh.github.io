@@ -7,6 +7,8 @@ function bgSketch(nprtls, mainQ) {
     var old_mainwidth = 0, regime_changed = false;
     var bg_canvas;
     var activeQ = true;
+    
+    var step = 0, updateInterval = 10;
 
     function reshuffleParticles(pop) {
       pop.prtls.forEach(function(prtl) {
@@ -69,15 +71,20 @@ function bgSketch(nprtls, mainQ) {
 
     $.draw = function() {
       $.clear();
+      if (step >= updateInterval) {
+        step = 0;
+      }
       if (activeQ) {
-        let qtree = new QuadTree($, 5, new Meshblock($, 0, $.width, 0, $.height))
+        let qtree = new QuadTree($, 3, new Meshblock($, 0, $.width, 0, $.height))
         qtree.append(population);
         population.push(vel_mag);
         $.noFill();
         $.strokeWeight(1);
-        population.prtls.forEach(function(prtl) {
-          nhood = new ParticlePopulation($, qtree.findNeighborhood(prtl, nei_rad));
-          nhood.prtls.forEach(function(nei) {
+        population.prtls.forEach(function(prtl, ind) {
+          if ((step + ind) % updateInterval == 0 || !prtl.nhood || prtl.crossedBoundary) {
+            prtl.nhood = new ParticlePopulation($, qtree.findNeighborhood(prtl, nei_rad));
+          }
+          prtl.nhood.prtls.forEach(function(nei) {
             let dst = $.dist(nei.pos.x, nei.pos.y, prtl.pos.x, prtl.pos.y);
             let col = $.map(dst, 0, nei_rad, 255, 0);
             $.stroke(col, 23, 123);
@@ -86,10 +93,11 @@ function bgSketch(nprtls, mainQ) {
         });
         population.draw();
       }
+      step ++;
     }
   }
 }
 window.addEventListener('load', (event) => {
   new p5(bgSketch(50, true));
-  new p5(bgSketch(30, false));
+  // new p5(bgSketch(30, false));
 });

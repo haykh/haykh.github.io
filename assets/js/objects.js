@@ -3,11 +3,15 @@ class Particle {
     this.sketch = sketch;
     this.pos = this.sketch.createVector(x, y);
     this.vel = this.sketch.createVector(vx, vy);
+    this.nhood = null;
+    this.crossedBoundary = false;
   }
   push(vmag) {
     this.pos.add(this.vel);
-    this.pos.x = periodicLimit(this.pos.x, 0, this.sketch.width);
-    this.pos.y = periodicLimit(this.pos.y, 0, this.sketch.height);
+    let pl1, pl2;
+    [pl1, this.pos.x] = periodicLimit(this.pos.x, 0, this.sketch.width);
+    [pl2, this.pos.y] = periodicLimit(this.pos.y, 0, this.sketch.height);
+    this.crossedBoundary = pl1 || pl2;
     let velmag = vmag / 20;
     this.vel.x += this.sketch.random(-velmag, velmag);
     this.vel.y += this.sketch.random(-velmag, velmag)
