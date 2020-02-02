@@ -135,7 +135,7 @@ body {
 }
 
 #aboutme {
-  background-image: url("/assets/images/me.jpg");
+  background-image: url("/assets/images/me_lowres.jpg");
   background-size: cover;
   margin-left: auto;
   margin-right: auto;
