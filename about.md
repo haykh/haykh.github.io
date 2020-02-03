@@ -19,6 +19,6 @@ Have a fun scrolling around!
 
 ---
 
-My btc wallet: `3PTMUVtpe8XNxaub7X2J3aCaoXLcN7dTjj`
+My btc wallet: `1JMn5HKP1kGJukqLgvAkfnbymr6cBnHhgF`
 
 <div id="aboutme-btc"></div>
