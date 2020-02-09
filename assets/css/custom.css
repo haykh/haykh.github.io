@@ -149,7 +149,7 @@ body {
 }
 @media (min-width: 49rem) {
   #aboutme {
-    width: 250px; 
+    width: 250px;
     height: 250px;
   }
   #aboutme-btc {
@@ -168,4 +168,15 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+.highlighter-rouge div.highlight {
+  padding: 0;
+}
+
+figure imgsrc {
+  color: gray;
+  display: block;
+  text-align: right;
+  font-style: italic;
 }

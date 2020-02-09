@@ -1,10 +1,37 @@
+<!-- MATHJAX -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 {% include slider_scripts.html %}
+
+<!-- fontawesome -->
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+
+<!-- GIFFFER -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gifffer/1.5.0/gifffer.min.js"></script>
+
 <script>
   window.onload = function() {
-    Gifffer();
+    Gifffer({
+      playButtonStyles: {
+        'width': '60px',
+        'height': '60px',
+        'border-radius': '30px',
+        'background': 'rgba(255,255,255, 0.6)',
+        'position': 'absolute',
+        'top': '50%',
+        'left': '50%',
+        'margin': '-30px 0 0 -30px'
+      },
+      playButtonIconStyles: {
+        'width': '0',
+        'height': '0',
+        'border-top': '14px solid transparent',
+        'border-bottom': '14px solid transparent',
+        'border-left': '14px solid rgba(0, 0, 0, 0.5)',
+        'position': 'absolute',
+        'left': '26px',
+        'top': '16px'
+      }
+    });
   }
   function mapScrollOff() {
     var element = document.getElementById("map");
