@@ -34,12 +34,20 @@ body {
     background-image: url('../images/dark.jpg');
     background-size: cover;
   }
+  .post-body p, .post-body .highlighter-rouge {
+    font-size: 16px;
+    line-height: 1.4rem;
+  }
 }
 
 @media (max-width: 49rem) {
   body {
     background-image: url('../images/dark.jpg');
     background-size: 100%;
+  }
+  .post-body p, .post-body .highlighter-rouge {
+    font-size: 14px;
+    line-height: 1.4rem;
   }
 }
 
@@ -179,4 +187,18 @@ figure imgsrc {
   display: block;
   text-align: right;
   font-style: italic;
+}
+
+.giffer-gif img {
+  border-radius: 0px;
+}
+
+.MathJax_Display {
+  overflow-x: scroll;
+}
+
+@media(max-width:768px){
+  .MathJax_Display {
+    font-size: 0.7em;
+  }
 }

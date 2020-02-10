@@ -166,7 +166,7 @@ Now when you input the next number, `0.2`, it will perform the whole magic again
 
 What the computer does next is it takes these two bytes of information number `[0,0,0,0,1,1,0,0]` and `[0,0,0,1,1,0,0,1]` and sums them up as it was taught: element-by-element. `[0,0,0,0,1,1,0,0]+[0,0,0,1,1,0,0,1]=[0,0,1,0,0,1,0,1]`. It then converts the answer to base-`10` and returns. The problem is... that's not `0.3`, if you convert `[0,0,1,0,0,1,0,1]` to base-`10` you'll get $$0.289063$$. Again, close to $$0.3$$, but not exactly. So if your computer were storing 8 bits of data for each fraction, if you were to enter `0.1+0.2` it would return `0.289063`.
 
-But computers don't store fractional numbers in just 8 bits. For a typical `python` by default the computer stores 64 bits for to represent a fractional number. Some of those bits store the sign of your number as well as the position of the dot (`.`), while 53 of these bits store actual numbers. So when you enter `0.1` it will convert it into a binary like this: `0.00011001100110011001100110011001100110011001100110011010`. If you convert it back into base-`10` you'll see something like this:
+But computers don't store fractional numbers in just 8 bits. For a typical `python` by default the computer stores 64 bits for to represent a fractional number. Some of those bits store the sign of your number as well as the position of the dot (`.`), while 53 of these bits store actual numbers. So when you enter `0.1` it will convert it into a binary like this: `0.000110011...`. If you convert it back into base-`10` you'll see something like this:
 
 $$
 0.1000000000000000055511151231257827021181583404541015625
@@ -201,6 +201,6 @@ So... if something doesn't make sense -- dig deeper.
 PS. Oh and... I couldn't resist to make this neat animation on what you've just read. Basically a tl;dr version of this text. Feel free to share.
 
 <figure>
-<img data-gifffer="/assets/images/2020-precision/anim.gif" data-gifffer-alt="anim.gif" width="100%">
+<img class='giffer-gif' data-gifffer="/assets/images/2020-precision/anim.gif" data-gifffer-alt="anim.gif" width="100%">
 <imgsrc>Made with the <a href="https://github.com/3b1b/manim"><code class="highlighter-rouge">manim</code></a> animation library.</imgsrc>
 </figure>
