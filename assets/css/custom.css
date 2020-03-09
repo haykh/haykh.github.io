@@ -37,7 +37,7 @@ body {
     background-image: url('../images/dark.jpg');
     background-size: cover;
   }
-  .post-body { 
+  .post-body {
     font-size: 16px;
   }
   .post-body .highlighter-rouge {
@@ -56,7 +56,7 @@ body {
   }
   .post-body .highlighter-rouge {
     font-size: 0.8rem;
-  } 
+  }
 }
 
 @media (min-width: 49rem) {
@@ -73,11 +73,10 @@ body {
 
 @media (min-width: 100rem) {
   #sidebar {
-    margin: 0 0 0 auto;
     border-left: 6px solid white;
   }
   .container {
-    margin: 0 auto 0 0;
+    margin: 0 auto;
   }
 }
 
