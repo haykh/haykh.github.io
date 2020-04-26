@@ -99,18 +99,22 @@ but... let's be honest. This doesn't look nearly as cool. Need a slightly more p
 
 Ok, this decimal system might not actually be that bad. Now why exactly do we need infinitely many $$3$$-s to write down $$1/3$$? Well... imagine a number like this: $$1.23456$$. What this really means is
 
+<div class="long">
 $$
 1.23456 = 1 + 2\cdot \frac{1}{10} + 3\cdot \frac{1}{100} + 4\cdot \frac{1}{1000} + 5\cdot \frac{1}{10000} + 6\cdot \frac{1}{100000}.
 $$
+</div>
 
 And so in general, if you have a number written in this way, $$a_0.a_1 a_2 a_3 a_4 a_5 a_6 a_7...$$, it actually means
 
+<div class="long">
 $$
 \begin{eqnarray}
 a_0.a_1 a_2 a_3 a_4 a_5 a_6 a_7... &=&a_0\cdot \frac{1}{10^0} + a_1\cdot \frac{1}{10^{1}} + a_2\cdot \frac{1}{10^{2}} + a_3\cdot \frac{1}{10^{3}} + ... =\\
   &=&\sum\limits_{n=0} a_n\cdot \frac{1}{10^{n}}
 \end{eqnarray}
 $$
+</div>
 
 > Numbers $$a_0$$, $$a_1$$, $$a_2$$ are some single digit numbers, from $$0$$ to $$9$$.
 
@@ -118,9 +122,11 @@ If you've learned anything about infinite series in your undergrad, this is the 
 
 Now you can think of these $$1/10^n$$ as some basis functions, and $$a_n$$ as your coefficients. Just like in Fourier series you have $$e^{2\pi i n}$$ (for $$x=1$$). And basically any number can be decomposed in this basis. For example, $$0.5$$ will have only one nonzero coefficient, $$a_1 = 5$$, while the rest is zero. For $$0.25$$ we have $$a_1 = 2$$ and $$a_2 = 5$$, while the rest is again zero. And here's where $$1/3$$ comes into play: it turns out that to decompose $$1/3$$ into this basis you'd need infinitely many coefficients. In other words:
 
+<div class="long">
 $$
 \frac{1}{3} = 0\cdot \frac{1}{10^0} + 3\cdot \frac{1}{10^{1}} + 3\cdot \frac{1}{10^{2}} + 3\cdot \frac{1}{10^{3}} + ... = \sum\limits_{n=1}^{\infty} 3\cdot \frac{1}{10^{n}}.
 $$
+</div>
 
 This might sound counterintuitive, right? $$1/3$$ is a simple number. Why do we need infinite series? Well... because of the basis. Think of Fourier series; the functions in Fourier series are smooth, so representing even simple but pointy things like a step function (like the one shown below) will require infinitely many sine waves. Simply because you can't just add a few smooth functions and get something sharp. You'll have to add infinitely many. For the same reason you can't add a bunch $$1/10$$-s, $$1/100$$-s, $$1/1000$$-s etc and get something that's equal to $$1/3$$, you'll have to have infinitely many.
 
@@ -139,20 +145,24 @@ So far so good. If you try adding $$0.1+0.2$$ on such a computer, it will always
 
 Instead let's focus on fractional numbers. Now remember in base $$10$$ we would decompose our fraction into a sum of coefficients, multiplied by $$1/10$$, $$1/100$$, etc. In base $$2$$ we can do a very similar thing by decomposing our number like so:
 
+<div class="long">
 $$
 \begin{eqnarray}
 a_0.a_1 a_2 a_3 a_4 a_5 a_6 a_7... &=&a_0\cdot \frac{1}{2^0} + a_1\cdot \frac{1}{2^{1}} + a_2\cdot \frac{1}{2^{2}} + a_3\cdot \frac{1}{2^{3}} + ... =\\
   &=&\sum\limits_{n=0} a_n\cdot \frac{1}{2^{n}}
 \end{eqnarray}
 $$
+</div>
 
 > Keep in mind, numbers $$a_0$$, $$a_1$$ etc can only be $$0$$-s or $$1$$-s, since our computer has no idea what $$2$$, $$3$$, or let alone $$12$$ means.
 
 Now again, just like for the base-`10` computer, our base-`2` computer itself has no idea what the numbers `2` or `4` or `8` mean. The only thing it knows are numbers from `0` to `1` and how to combine them into arrays! So basically, when we write the number `0.00110` the computer will store it as an array `[0,0,0,1,1,0]`. To convert it to a human readable base-`10`, you'd simply perform the summation:
 
+<div class="long">
 $$
 0\cdot \frac{1}{2^0} + 0\cdot \frac{1}{2^1} + 0\cdot \frac{1}{2^2} + 1\cdot \frac{1}{2^3} + 1\cdot \frac{1}{2^4} + 0\cdot \frac{1}{2^5} = 0.1875~(\text{in base}~10).
 $$
+</div>
 
 ### So why `0.1 + 0.2 != 0.3`?
 
@@ -168,9 +178,11 @@ What the computer does next is it takes these two bytes of information number `[
 
 But computers don't store fractional numbers in just 8 bits. For a typical `python` by default the computer stores 64 bits for to represent a fractional number. Some of those bits store the sign of your number as well as the position of the dot (`.`), while 53 of these bits store actual numbers. So when you enter `0.1` it will convert it into a binary like this: `0.000110011...`. If you convert it back into base-`10` you'll see something like this:
 
+<div class="long">
 $$
 0.1000000000000000055511151231257827021181583404541015625
 $$
+</div>
 
 Again, this is pretty darn close to $$0.1$$. Something similar happens for `0.2`, and the when add up the results you get the `0.30000000000000004` which we've seen above.
 

@@ -196,12 +196,15 @@ figure imgsrc {
   font-style: italic;
 }
 
+
 .giffer-gif img {
   border-radius: 0px;
 }
 
-.MathJax_Display {
-  overflow-x: scroll;
+@media (max-width: 49rem) {
+  .long > .MathJax_Display {
+    overflow-x: scroll;
+  }
 }
 
 @media(max-width:768px){
